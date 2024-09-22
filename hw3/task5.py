@@ -7,8 +7,8 @@ l = []
 x = 0
 y = 0
 d = 0
-while len(l)//2 != n*m:
-    s[x, y] = len(l)//2 + 1
+while len(l) // 2 != n * m:
+    s[x, y] = len(l) // 2 + 1
     l.append((x, y))
     if d == 0:
         if y == m - 1:
