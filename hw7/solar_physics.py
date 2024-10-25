@@ -107,11 +107,17 @@ def calculate_force(body, space_objects):
                 body.Fx += -(xx /abs(xx)) * F * abs(np.cos(ug))
                 body.Fy += -(yy/abs(yy)) * F * abs(np.sin(ug))
             except:
-                if yy > 0:
-                    body.Fy += -F
-                else:
-                    body.Fy += F
-                body.Fx += 0
+                if yy == 0:
+                    if xx > 0:
+                        body.Fx += -F
+                    elif xx < 0:
+                        body.Fx += F
+                if xx == 0:
+                    if yy > 0:
+                        body.Fy += -F
+                    elif yy < 0:
+                        body.Fy += F
+                w = np.sqrt(body.Vx ** 2 + body.Vy ** 2) / R #угловая скорость
             
             
             
